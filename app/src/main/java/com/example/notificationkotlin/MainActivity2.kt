@@ -26,6 +26,7 @@ class MainActivity2 : AppCompatActivity() {
         binding = ActivityMain2Binding.inflate(layoutInflater)
         setContentView(binding.root)
         createNotificationChannel()
+        binding.textView.text = intent.getStringExtra("DATA") ?: ""
     }
 
     private fun createNotificationChannel(){
