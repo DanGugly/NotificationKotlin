@@ -41,11 +41,11 @@ class MainActivity2 : AppCompatActivity() {
         }
     }
 
-    private fun sendNotification(){
+    private fun sendNotification(data: String?){
         val builder = NotificationCompat.Builder(this, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_launcher_foreground)
             .setContentTitle("YOUR DATA BELOW:")  //Title of notification
-            .setContentText(binding.textView.text.toString())
+            .setContentText(data)
             .setPriority(PRIORITY_DEFAULT)
 
         with(NotificationManagerCompat.from(this)){
@@ -60,7 +60,7 @@ class MainActivity2 : AppCompatActivity() {
 
         binding.button.setOnClickListener{
             Toast.makeText(baseContext,"Sending notification: $text" ,Toast.LENGTH_LONG).show()
-            sendNotification()
+            sendNotification(text)
         }
     }
 }
