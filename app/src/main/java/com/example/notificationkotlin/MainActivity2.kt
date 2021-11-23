@@ -23,9 +23,9 @@ class MainActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_main2)
+        // createNotificationChannel()
         binding = ActivityMain2Binding.inflate(layoutInflater)
         setContentView(binding.root)
-        createNotificationChannel()
         binding.textView.text = intent.getStringExtra("DATA") ?: ""
     }
 
@@ -56,6 +56,8 @@ class MainActivity2 : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+        //Best practise for creating notification channel in onresume as we are sure user is accessing the app
+        createNotificationChannel()
         val text:String = intent.getStringExtra("DATA") ?: ""
         Log.d("Activity2", "Entered activity 2, DATA: $text")
 

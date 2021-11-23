@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "903148379219",
+    "project_id": "fir-firstapp-f04d2",
+    "storage_bucket": "fir-firstapp-f04d2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:903148379219:android:a4d6c5d7759b74e293faa6",
+        "android_client_info": {
+          "package_name": "com.example.notificationkotlin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "903148379219-63vcuvjdqkshgnrfrd4gesgd6lvgv0bo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoNfNBOfwInEo5LM8j4axfu82fI4zVRTY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "903148379219-63vcuvjdqkshgnrfrd4gesgd6lvgv0bo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
