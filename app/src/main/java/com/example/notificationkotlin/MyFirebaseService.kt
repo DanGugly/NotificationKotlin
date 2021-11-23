@@ -1,6 +1,5 @@
 package com.example.notificationkotlin
 
-import android.icu.text.CaseMap
 import android.util.Log
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat

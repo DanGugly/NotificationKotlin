@@ -3,6 +3,7 @@ package com.example.notificationkotlin
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
+import android.content.SharedPreferences
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -64,6 +65,27 @@ class MainActivity2 : AppCompatActivity() {
         binding.button.setOnClickListener{
             Toast.makeText(baseContext,"Sending notification: $text" ,Toast.LENGTH_LONG).show()
             sendNotification(text)
+
+            //Connection for saving files, private = only app can access
+            val sharedPreferences = baseContext.getSharedPreferences(SHARED_PREFS, MODE_PRIVATE)
+            val editor = sharedPreferences.edit().apply{
+                putString("EMAIL_KEY", text) //Save text in shared preferences, same key replaces old value
+            }.apply()
+
+            //Get all keys / values from shared preferences
+            val allKeys = sharedPreferences.all.keys
+
+            // Retreive data from shared preferences
+            val mString = sharedPreferences.getString("EMAIL_KEY", null)
+
+            //Remove specific key value
+            sharedPreferences.edit().remove("EMAIL_KEY").apply()
+
+            // Clear everything from shared preferences
+            sharedPreferences.edit().clear().apply()
         }
+    }
+    companion object{
+        const val SHARED_PREFS = "MY_SHARED_PREFS"
     }
 }
